@@ -2,23 +2,24 @@
 layout: default
 ---
 
-<div class="jumbotron section-header">
+<div class="jumbotron page-header text-center darken-bg" id="home-header">
   <div class="container">
     <h1><strong>Join</strong> the conversation</h1>
     <p>Connecting citizens and their elected leaders</p>
     <p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Sign Up</a>
+      <a class="btn btn-transparent btn-lg" href="#" role="button">Sign Up</a>
     </p>
   </div>
 </div>
 
-<div>
-  <div class="container">
+<section>
+  <div class="container text-center">
     <div class="row">
-    <h1><strong>Speak</strong> up<h1>
+    <h1 class="section-heading"><strong>Speak</strong> up<h1>
     </h1>
     <div class="row">
       <div class="col-md-4">
+        <i></i>
         <h2>How to vote</h2>
         <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         <p>
@@ -41,27 +42,37 @@ layout: default
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="jumbotron">
-  <div class="container">
-    <h1>Who is Your <strong>Ward Councillor?</strong></h1>
-    <p>Find out who represents you where you live.</p>
-    <p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Find now</a>
-    </p>
-    <p><small><a href="#">Use your browser location</a></small></p>
+<div class="jumbotron" id="ward-councillor-search">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Who is Your <strong>Ward Councillor?</strong></h1>
+        <p>Find out who represents you where you live.</p>
+        <form>
+          <p>
+            <input type="text" class="form-control" placeholder="What is your address?">
+          </p>
+          <p>
+            <a class="btn btn-transparent btn-lg" href="#" role="button">Find now</a>
+          </p>
+        </form>
+        <p><small><a href="#">Use your browser location</a></small></p>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="jumbotron">
+<div class="jumbotron darken-bg" id="download-app">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4" id="phone-preview">
+        <img src="/img/blackberry.png" class="img-responsive">
       </div>
       <div class="col-md-8">
         <h1>Download our APP, <br><strong>join the conversation!</strong></h1>
-        <p>For the latest news, views and conversations, download our app from the AppStore or Google play.</p>
+        <p>For the latest news, views and conversations, <br>download our app from the AppStore or Google play.</p>
         <p>[Google play button] [Apple AppStore button]</p>
       </div>
     </div>
