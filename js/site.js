@@ -5,6 +5,11 @@ $(document).ready(function(){
 		e.preventDefault();
 		$("#wrapper").toggleClass("toggled");
 		$("#sidebar-toggle i").toggleClass("fa-angle-double-right fa-comments");
-	});	
+	});
+
+	//navbar scroll
+	$(document).scroll(function() {
+  	$(".navbar").toggleClass("scrolled", $(document).scrollTop() >= 60);
+	});
 
 });
