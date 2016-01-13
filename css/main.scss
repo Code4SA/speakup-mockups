@@ -24,7 +24,8 @@ $gray-darker: lighten($gray-base, 13.5%) !default; // #222
 $gray-dark: lighten($gray-base, 20%) !default;   // #333
 $gray: lighten($gray-base, 33.5%) !default; // #555
 $gray-light: lighten($gray-base, 46.7%) !default; // #777
-$gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
+$gray-lighter: lighten($gray-base, 90%) !default; // #eee
+$gray-lightest: lighten($gray-base, 96%) !default;
 
 $brand-primary: $green-dark !default;
 $brand-success:         #5cb85c !default;
@@ -34,7 +35,7 @@ $brand-danger:          #d9534f !default;
 
 $brand-secondary: $red-dark;
 
-//== Scaffolding
+//== Scaffoldin
 //
 $body-bg: $gray-lighter !default;
 $link-hover-decoration: none !default;
@@ -81,6 +82,9 @@ $jumbotron-heading-font-size: ceil(($font-size-base * 3.7)) !default;
 // Import Font Awesome
 @import "font-awesome.scss";
 
+// Import Simple Sidebar
+@import "simple-sidebar.scss";
+
 //============================================================================================
 
 //
@@ -89,6 +93,11 @@ $jumbotron-heading-font-size: ceil(($font-size-base * 3.7)) !default;
 
 //== Scaffolding
 //
+
+html, body{
+	max-width: 100%;
+  overflow-x: hidden;
+}
 
 .page-header{
 	background: $gray;
@@ -100,7 +109,7 @@ $jumbotron-heading-font-size: ceil(($font-size-base * 3.7)) !default;
 //== Navbar
 //
 
-.navbar-fixed-top{
+.navbar{
 	text-shadow: 0 0 2px rgba(0,0,0,0.7);
 	i{
 		font-size: 2em;
@@ -121,11 +130,34 @@ $jumbotron-heading-font-size: ceil(($font-size-base * 3.7)) !default;
 	padding: 10px 0;
 }
 
+//== Sidebar
+//
+
+.sidebar{
+	background-color: $gray-lightest;
+	height: 100%;
+	padding: 10px;
+}
+
+.sidebar-toggle{
+	top: $navbar-height;
+	width: $navbar-height;
+	text-align: center;
+	text-shadow: 0 0 2px rgba(0,0,0,0.7);
+	a{
+		font-size: 40px;
+		color: $white;
+		line-height: $navbar-height;
+		width: $navbar-height;  
+	}
+}
+
 //== Section
 //
 
 section{
-	padding: 48px 0;
+	background-color: $body-bg;
+	padding: 48px;
 	.section-heading{
 		margin-top: 0;
 	}
