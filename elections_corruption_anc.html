@@ -8,18 +8,7 @@ layout: default
   </div>
 </div>
 
-<div class="sub-nav">
-  <div class="container-fluid">
-    <ul class="nav nav-pills">
-      <li role="presentation"><a href="#">About</a></li>
-      <li role="presentation"><a href="#">Corruption</a></li>
-      <li role="presentation"><a href="#">Crime</a></li>
-      <li role="presentation"><a href="#">Education</a></li>
-      <li role="presentation"><a href="#">Employment</a></li>
-      <li role="presentation"><a href="#">Housing</a></li>
-    </ul>
-  </div>
-</div>
+{% include subnav-elections.html %}
 
 <section>
   <div class="container-fluid">
@@ -27,7 +16,7 @@ layout: default
       <div class="col-md-4">
         <h3 class="section-heading">ANC Promises on Corruption</h2>
         <p>
-          <img src="/img/party-anc.png" class="img-responsive">
+          <img src="{{ "img/party-anc.png" | prepend: site.baseurl }}" class="img-responsive">
         </p>
         <h4>Download Party Manifestos</h4>
         <ul class="list-unstyled">

@@ -35,7 +35,7 @@ $brand-danger:          #d9534f !default;
 
 $brand-secondary: $red-dark;
 
-//== Scaffoldin
+//== Scaffolding
 //
 $body-bg: $gray-lighter !default;
 $link-hover-decoration: none !default;
@@ -85,6 +85,10 @@ $jumbotron-heading-font-size: ceil(($font-size-base * 3.7)) !default;
 // Import Simple Sidebar
 @import "simple-sidebar.scss";
 
+// Import Yet Another Mega Menu
+@import "_yamm.scss";
+
+
 //============================================================================================
 
 //
@@ -96,7 +100,7 @@ $jumbotron-heading-font-size: ceil(($font-size-base * 3.7)) !default;
 
 html, body{
 	max-width: 100%;
-  overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 .page-header{
@@ -106,28 +110,55 @@ html, body{
 	padding-top: $jumbotron-padding + $navbar-height;
 }
 
-//== Navbar
+.page-content-wrapper{
+	background-color: $body-bg;
+}
+
+//== Navbar (mainnav)
 //
 
-.navbar{
-	border-bottom: 0;
-	text-shadow: 0 0 2px rgba(0,0,0,0.7);
-	i{
-		font-size: 2em;
-		vertical-align: middle;
-	}
-	#search-btn{
-		text-shadow: none;
-		background: $gray-light !important;
+.mainnav{
+	border: none;
+}
+
+@media (min-width:768px) { 
+	.mainnav{
+		background-color: transparent;
+		a{
+			color: $white !important;
+		}
 	}
 }
 
-.navbar.scrolled{
+@media (max-width:767px) { 
+	
+	.mainnav{
+		background-color: $white;
+		text-shadow: none;
+		a:link{
+			color: $black !important;
+			i{
+				color: $brand-primary;
+			}
+		}
+		a:hover{
+			color: $brand-primary !important;
+		}
+		#search-btn{
+			background: $gray-light;
+			a i{
+				color: $white;
+			}
+		}
+	}
+
+}
+
+.mainnav.scrolled{
 	background-color: $white;
-	color: $black;
 	text-shadow: none;
 	a:link{
-		color: $black;
+		color: $black !important;
 		i{
 			color: $brand-primary;
 		}
@@ -143,14 +174,52 @@ html, body{
 	}
 }
 
-.navbar-brand {
+.mainnav .navbar-brand {
 	padding: 15px;
 }
 
-//== Sub-Nav
-.sub-nav{
+//== Subnav
+.subnav{
+
 	background-color: $white;
-	padding: 10px 0;
+
+	.navbar{
+		border-radius: 0;
+	}
+
+	a{
+		color: $black !important;
+		border-bottom: solid 1px $white;
+		&:hover{
+			color: $brand-primary !important;
+		}
+		&.active{
+			color: $brand-primary !important;
+		}
+	}
+
+	.open a.dropdown-toggle{
+		color: $brand-primary !important;
+		border-bottom: solid 1px $brand-primary;
+	}
+
+	.dropdown-menu{
+		background-color: $white;
+		border: 0;
+		box-shadow: none;
+		border-radius: 0;
+		max-width: 700px;
+	}
+
+	.party-logo{
+		display: inline-block;
+		padding: 10px 20px;
+		line-height: 100px;
+		img{
+			max-height: 75px;
+		}
+	}
+
 }
 
 //== Sidebar
@@ -179,8 +248,8 @@ html, body{
 //
 
 section{
-	background-color: $body-bg;
-	padding: 48px;
+	background: $body-bg;
+	padding: 24px 48px;
 	.section-heading{
 		margin-top: 0;
 	}
@@ -205,12 +274,12 @@ section{
 .jumbotron{
 	margin-bottom: 0;
 	background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  text-shadow: 0 0 2px rgba(0,0,0,0.7);
-  a, a:hover{
-  	color: $white;
-  }
+	background-position: center center;
+	background-size: cover;
+	text-shadow: 0 0 2px rgba(0,0,0,0.7);
+	a, a:hover{
+		color: $white;
+	}
 }
 
 .jumbotron.page-header{
